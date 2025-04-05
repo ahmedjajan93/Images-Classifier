@@ -8,10 +8,14 @@ from torchvision import  models
 
 # App configuration
 st.set_page_config(page_title="My Images Classifier", layout="wide")
+
+# Build Model
 model = models.resnet101(pretrained=True)
 model.eval()
+ 
 
 # Image preprocessing
+@st.cache_data(ttl=3600)
 def preprocess_image(image):
     transform = transforms.Compose([
         transforms.Resize(256),
