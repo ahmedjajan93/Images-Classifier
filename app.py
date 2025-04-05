@@ -90,7 +90,7 @@ def main():
          f"""
          <style>
          .stApp {{
-             background-image: url("https://github.com/ahmedjajan93/Churn_Modelling.git/main/background.png");
+             background-image: url("https://github.com/ahmedjajan93/shoe-sandal-boot-classifier.git/main/background.png");
              background-size:cover;
              background-position:center;
              background-repeat: no-repeat;
