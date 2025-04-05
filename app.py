@@ -52,6 +52,22 @@ SUPPORTED_EXTENSIONS = ["jpg", "jpeg", "png", "gif", "bmp", "tiff", "webp", "jfi
 
 # Main app
 def main():
+
+    st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background-image: url("https://github.com/ahmedjajan93/shoe-sandal-boot-classifier.git/main/background.png");
+             background-size:cover;
+             background-position:center;
+             background-repeat: no-repeat;
+             background-attachment: fiexed;
+         }}
+         </style>
+         """,
+           unsafe_allow_html=True
+     )
+
     st.title("My Images Classifier")
     st.write("Upload an image to classify it using your trained model")
     
@@ -100,20 +116,7 @@ def main():
                 for label, prob in results[:5]:  # Show top 5
                     st.progress(prob)
                     st.write(f"**{label}**: {prob*100:.2f}% confidence")
-    st.markdown(
-         f"""
-         <style>
-         .stApp {{
-             background-image: url("https://github.com/ahmedjajan93/shoe-sandal-boot-classifier.git/main/background.png");
-             background-size:cover;
-             background-position:center;
-             background-repeat: no-repeat;
-             background-attachment: fiexed;
-         }}
-         </style>
-         """,
-           unsafe_allow_html=True
-     )
+   
 
 if __name__ == "__main__":
     main()
