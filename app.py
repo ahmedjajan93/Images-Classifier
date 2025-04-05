@@ -52,7 +52,7 @@ def main():
     
     # Sidebar
     st.sidebar.header("Settings")
-    confidence_threshold = st.sidebar.slider("Confidence Threshold", 0, 100, 50) / 100
+    confidence_threshold = st.sidebar.slider("Confidence Threshold", 20, 100, 50) / 100
     
     # File upload
    
