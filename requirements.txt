@@ -10,3 +10,4 @@ optuna
 optuna-integration[tfkeras]
 plotly
 Pillow
+opencv-python
