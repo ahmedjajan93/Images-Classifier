@@ -10,8 +10,13 @@ from torchvision import  models
 st.set_page_config(page_title="My Images Classifier", layout="wide")
 
 # Build Model
-model = models.efficientnet_b7(pretrained=True)
-model.eval()
+@st.cache_resource
+def load_efficientnet():
+    model = models.efficientnet_b7(pretrained=True)
+    model.eval()
+    return model
+
+model = load_efficientnet()
  
 
 # Image preprocessing
