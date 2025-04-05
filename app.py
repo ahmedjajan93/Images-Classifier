@@ -8,7 +8,7 @@ from torchvision import  models
 
 # App configuration
 st.set_page_config(page_title="My Images Classifier", layout="wide")
-model = models.resnet152(pretrained=True)
+model = models.resnet101(pretrained=True)
 model.eval()
 
 # Image preprocessing
