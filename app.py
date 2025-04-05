@@ -1,9 +1,7 @@
 import streamlit as st
 import torch
-import torchvision
 from torchvision import transforms
 from PIL import Image
-from models.model import CustomResNet18
 import json
 import urllib.request
 from torchvision import  models
@@ -88,6 +86,20 @@ def main():
                 for label, prob in results[:5]:  # Show top 5
                     st.progress(prob)
                     st.write(f"**{label}**: {prob*100:.2f}% confidence")
+    st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background-image: url("https://github.com/ahmedjajan93/Churn_Modelling.git/main/background.png");
+             background-size:cover;
+             background-position:center;
+             background-repeat: no-repeat;
+             background-attachment: fiexed;
+         }}
+         </style>
+         """,
+           unsafe_allow_html=True
+     )
 
 if __name__ == "__main__":
     main()
