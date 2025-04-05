@@ -10,7 +10,7 @@ from torchvision import  models
 st.set_page_config(page_title="My Images Classifier", layout="wide")
 
 # Build Model
-model = models.resnet101(pretrained=True)
+model = models.efficientnet_b7(pretrained=True)
 model.eval()
  
 
