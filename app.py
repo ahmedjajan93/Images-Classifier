@@ -38,6 +38,8 @@ def predict(image_tensor):
         _, predicted = torch.max(outputs, 1)
     return predicted.item()
 
+ # Supported image extensions (add more if needed)
+SUPPORTED_EXTENSIONS = ["jpg", "jpeg", "png", "gif", "bmp", "tiff", "webp", "jfif"]
 
 # Main app
 def main():
@@ -49,8 +51,11 @@ def main():
     confidence_threshold = st.sidebar.slider("Confidence Threshold", 0, 100, 50) / 100
     
     # File upload
-    uploaded_file = st.file_uploader("Choose an image...",  type=None,  # Allow all files
-    accept_multiple_files=False)
+   
+    uploaded_file = st.file_uploader( "Choose an image...",
+                                      type=None,  # Allow all files
+                                      accept_multiple_files=False, 
+                                      help=f"Supported formats: {', '.join(SUPPORTED_EXTENSIONS)}" )
     
     if uploaded_file is not None:
         col1, col2 = st.columns(2)
